@@ -6,9 +6,9 @@ const generalRoutes=require('./routes/generic');
 const app =express();
 app.use(bodyParser.urlencoded({extended:false}));
 // admin Routes
-app.use(adminRoutes);
+app.use('/admin',adminRoutes);
 // General Routes
-app.use(generalRoutes);
+app.use('/general',generalRoutes);
 
 // Error Route
 app.use((req,res,next)=>{
