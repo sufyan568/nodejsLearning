@@ -1,16 +1,18 @@
-const http =require('http');
 const express =require('express');
+const bodyParser=require('body-parser')
+const adminRoutes=require('./routes/admin');
+const generalRoutes=require('./routes/generic');
 
 const app =express();
+app.use(bodyParser.urlencoded({extended:false}));
+// admin Routes
+app.use(adminRoutes);
+// General Routes
+app.use(generalRoutes);
 
-app.use((req, res, next) => {
-console.log("middleware");
-next(); // Allows the request to conitnue
+// Error Route
+app.use((req,res,next)=>{
+    res.status(404).send('<h1><center>Route Not Found</center></h1>');
 });
-
-app.use((req, res, next) => {
-    console.log("another middleware");
-    res.send('<h1>Hello from express nodejs</h1>'); // Allows the request to conitnue
-    });
-const server=http.createServer(app);
-server.listen(3000);
+    
+app.listen(3000);
