@@ -1,10 +1,19 @@
+const path=require('path');
 const express = require('express');
-
 const router=express.Router();
 
+const rootDir=require('../util/path');
+const adminData=require('./admin');
 
-router.use('/general',(req, res, next) => {
-    console.log("geenral routes middleware");
-    res.send('<h1>Hello from express nodejs</h1>'); // Allows the request to conitnue
+router.use('/shop',(req, res, next) => {
+    const prod= adminData.products;
+    res.render('shop',{
+        pageTitle : 'Product List',
+        products : prod,
+        path : '/',
+        hasProducts :prod.length > 0,
+        
+    }); // Allows the request to conitnue
     });
+
 module.exports=router;
