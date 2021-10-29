@@ -1,5 +1,5 @@
-
-        
+<%- include('../layouts/mainLayout') %>
+    <main class="container">
         <form action="/admin/add-product" method="post" class="">
             <div class="row text-center m-2">
                 <h5>Create Product</h5>
@@ -9,13 +9,9 @@
                     Title
                 </label>
                 <div>
-                    <input type="text" placeholder="Product Title" name="product" class="form-control">
+                    <input type="text" placeholder="Product Title" name="Title" class="form-control">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </main>
-
-</body>
-
-</html>

@@ -1,0 +1,30 @@
+<%- include('../layouts/mainLayout') %>
+    <main class="container mt-3">
+        <% if(hasProducts){ %>
+            <div class="row">
+           <% for (let product of products)  {%>
+            <div class="col-3">
+                    <div class="card">
+                        <img src="https://i.ytimg.com/vi/cKvdWZaNDsM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWW3VJYjCZsz9-Ko2pcn6qWcWieA"
+                            alt="Avatar" style="width:100%">
+                        <div class="container">
+                            <h4><b><%= product.Title %></b></h4>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="text-center"><center><button class="btn btn-primary">Add to cart</button></center></a>
+                        </div>
+                    </div>
+
+                </div>
+                <% } %>
+            </div>
+
+            <%3 } else { %>
+                <div>Card Empty</div>
+                <% } %>
+    </main>
+
+</body>
+
+</html>
