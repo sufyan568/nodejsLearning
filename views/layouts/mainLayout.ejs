@@ -15,19 +15,19 @@
             <div class="container">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class=" nav-link " href="/general/shop">Shop</a>
+                    <a class="nav-link <%= path === 'shopList' ? 'text-white active' : '' %>" href="/general/shop">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="text-white nav-link active" href="/general/products">Products</a>
+                    <a class="nav-link  <%= path === 'getProducts' ? 'text-white active' : '' %>" href="/general/products">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="text-white nav-link active" href="/general/carts">Cart</a>
+                    <a class="nav-link  <%= path ==='Carts' ? 'text-white active' : '' %>" href="/general/carts">Cart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="text-white nav-link active" href="/admin/add-product">Add Product</a>
+                    <a class="nav-link  <%= path ==='addProducts' ? 'text-white active' : '' %>" href="/admin/add-product">Add Product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="text-white nav-link active" href="/admin/product-list">Product List</a>
+                    <a class="nav-link  <%= path ==='productsList' ? 'text-white active' : '' %>" href="/admin/product-list">Product List</a>
                 </li>
             </ul>
         </div>
